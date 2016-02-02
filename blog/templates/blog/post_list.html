@@ -8,16 +8,26 @@
             <h1><a href="">Cecily's Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: Now! </p>
-            <h2><a href="">My first post</a></h2>
-            <p>I should be studying.</p>
-        </div>
+        {% for post in posts %}
+  <div>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaks }}</p>
+  </div>
+{% endfor %}
+
 
         <div>
             <p>published: Now! </p>
             <h2><a href="">My second post</a></h2>
             <p>I'm so sleepy.</p>
         </div>
+
+        <div>
+            <p>published: Now! </p>
+            <h2><a href="">My third post</a></h2>
+            <p>I'm so hungry.</p>
+        </div>
+
     </body>
 </html>
